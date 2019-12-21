@@ -15,7 +15,7 @@ class Sector extends Circle{
 	double ang;
 	Sector(double r,double ang){
 		super(r);
-		this.ang=Math.toRadians(ang);
+		this.ang=ang;
 	}
 	double area() {
 		return 0.5 * Math.pow(r, 2) * ang ;
@@ -28,7 +28,7 @@ class Segment extends Circle{
 		this.h=h;
 	}
 	double area() {
-		return Math.abs((Math.pow(r,2)*Math.toRadians((r-h)/r)) - ((r-h)*Math.sqrt((2*r*h)-Math.pow(h,2))));
+		return (double) Math.pow(r,2)* Math.pow(((r-h)/r)-((r-h) * (2*r*h-Math.pow(h,2))),1/2);
 	}
 }
 
