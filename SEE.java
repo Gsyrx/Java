@@ -809,121 +809,81 @@ public class DemoLib {
 
 //Q12   List Queue
 package p12;
+import java.util.Scanner;
 import java.util.ArrayList;
-import java.util.Iterator;
+public class queue {
+	ArrayList<String> alist = new ArrayList<>();
+    void insert(String s)
+    {
+        alist.add(s);
+    }
+    void delete()
+    {
+        if (alist.isEmpty())
+            System.out.println("UNDERFLOW");
+        else {
+            System.out.println("String deleted is " + alist.get(0));
+            alist.remove(0);
+        }
+    }
+    void display()
+    {
+        if (alist.isEmpty())
+            System.out.println("UNDERFLOW");
+        else
+            System.out.println(alist);
+    }
+    public static void main(String args[])
+    {
+        Scanner sc = new Scanner(System.in);
+        queue ob = new queue();
+        int ch;
+        while (true)
+        {
+            System.out.println("Press 1 to insert\nPress 2 to delete\nPress 3 to display\nPress 4 to exit");
+            ch = sc.nextInt();
+            switch (ch) {
+                case 1: System.out.println("Enter a string");
+                        sc.nextLine();
+                        ob.insert(sc.nextLine());
+                        break;
+                case 2: ob.delete();
+                        break;
+                case 3: ob.display();
+                        break;
+                case 4: System.exit(0);
+                default:System.out.println("Incorrect choice");
+            }
+        }
+    }
 
-public class ListQueue {
-	private ArrayList<String> qList;
-	int capacity;
-	ListQueue (int capacity)
-	{
-		qList = new ArrayList<>(capacity);
-		this.capacity = capacity;
-	}
-	public void insertEnd(String item)
-	{
-		int size = qList.size();
-		if(size==capacity)
-			System.out.println("Queue is full");
-		else
-			qList.add(size,item);
-	}
-	public String deleteFront()
-	{
-		int size = qList.size();
-		if(size==0)
-		{
-			throw new NullPointerException("Queue is empty");
-		}
-		else
-			return qList.remove(0);
-	}
-	public void display()
-	{
-		int size= qList.size();
-		if(size==0)
-		{
-			System.out.println("The queue is empty");
-		}
-		else
-		{
-			Iterator<String> iterator = qList.iterator();
-			while(iterator.hasNext())
-				System.out.println(iterator.next());
-		}
-	}
 }
 
 
 
-
-package p12;
-
-public class DemoListQueue {
-	public static void main(String args[])
-	{
-		ListQueue myQueue = new ListQueue(5);
-		for(int i=0;i<15;i+=2)
-			myQueue.insertEnd(i+" ");
-		myQueue.display();
-		for(int i=0;i<6;i++)
-			System.out.println("The deleted elements are: "+myQueue.deleteFront());
-		myQueue.display();
-	}
-}
-
-
-
-//Q12   List String
 package p12;
 import java.util.LinkedList;
-import java.util.Iterator;
-
-public class LListString {
-	private LinkedList<String> list = new LinkedList<>();
-	public void addname(String name) {
-		list.add(name);
-	}
-	public void display()
-	{
-		if(list.isEmpty())
-		{
-			System.out.println("The list is empty");
-		}
-		else
-		{
-			Iterator iterator = list.iterator();
-			while(iterator.hasNext())
-			{
-				String name = iterator.next().toString();
-				if(name.length()<7)
-				{
-					System.out.println(name);
-				}
-			}
-		}
-	}
-}
-
-
-
-
-package p12;
-
-public class DemoLListString {
+import java.util.ListIterator;
+public class LList {
 	public static void main(String args[])
-	{
-		LListString myList = new LListString(); 
-		System.out.println("The names which are less than 7 are as : ");
-		myList.addname("Harsh");
-		myList.addname("Gaurav");
-		myList.addname("Abhinav");
-		myList.addname("Akshat");
-		myList.addname("Aaryan");
-		myList.addname("Harshil");
-		myList.addname("Nilesh");
-		myList.addname("Chirag");
-		myList.display();
-	}
-
+    {
+        LinkedList<String> lst = new LinkedList<>();
+        lst.add("Waqqas");
+        lst.add("save");
+        lst.addLast("Vinay");
+        lst.addFirst("cut");
+        lst.add(2, "Yash");
+        lst.add("me");
+        lst.add("Talmiz");
+        System.out.println("Linked list : " + lst);
+        ListIterator i = lst.listIterator();
+        System.out.println("Names with length less than 5: ");
+        while (i.hasNext())
+        {
+            String s = i.next().toString();
+            if(s.length()<5)
+                System.out.print(s+"  ");
+        }
+    }
 }
+
