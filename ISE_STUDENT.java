@@ -71,7 +71,6 @@ public class ISE_Department implements Department{
 
 
 
-
 package main;
 
 
@@ -86,8 +85,6 @@ public class MainClass {
 
         int n,count=0; 
         Faculty f[] = new Faculty[10]; 
-        String s;
-        boolean flag = false;
         ISE_Department ise = new ISE_Department();
         Scanner sc = new Scanner(System.in);
 
