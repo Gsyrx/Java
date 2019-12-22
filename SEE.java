@@ -868,13 +868,13 @@ public class LList {
 	public static void main(String args[])
     {
         LinkedList<String> lst = new LinkedList<>();
-        lst.add("Waqqas");
-        lst.add("save");
-        lst.addLast("Vinay");
-        lst.addFirst("cut");
+        lst.add("Gaurav");
+        lst.add("Amit");
+        lst.addLast("Akshat");
+        lst.addFirst("Aaryan");
         lst.add(2, "Yash");
-        lst.add("me");
-        lst.add("Talmiz");
+        lst.add("Lol");
+        lst.add("Harshil");
         System.out.println("Linked list : " + lst);
         ListIterator i = lst.listIterator();
         System.out.println("Names with length less than 5: ");
